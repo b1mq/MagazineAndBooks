@@ -23,6 +23,10 @@
             }
             return false;
         }
+        public void RemoveBookFromLibrary(Book book)
+        {
+            Books.Remove(book);
+        }
 
         public static Library operator +(Book book,Library a)
         {
