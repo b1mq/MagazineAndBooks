@@ -10,7 +10,7 @@
 
         public required string EMail { get; set; }
 
-        public int CountOfWorkers { get; set; }
+        public required int CountOfWorkers { get; set; }
 
         public void ShowInfo()
         {
@@ -44,6 +44,19 @@
         public static bool operator <(Magazine a, Magazine b)
         {
             return a.CountOfWorkers < b.CountOfWorkers;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is Magazine other)
+            {
+                return Name == other.Name && CountOfWorkers == other.CountOfWorkers;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, CountOfWorkers);
         }
 
     }
