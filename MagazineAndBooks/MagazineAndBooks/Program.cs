@@ -1,9 +1,12 @@
 ﻿using MagazineAndBooks.Domain.Entities;
-
-var a = new Magazine() { Description = "",Name = "A",EMail = "gmail",YearOfFoundation = 0,CountOfWorkers = 1}; 
-var b = new Magazine() { Description = "",Name = "A",EMail = "gmail",YearOfFoundation = 0,CountOfWorkers = 2};
-
-Console.WriteLine(a != b);
+using static System.Reflection.Metadata.BlobBuilder;
 
 
+var b = new Book() { BookName = "Transerfing", Author = "S", CountOfPages = 250 };
+
+var l = new Library()
+{
+    Name = "MyLibrary",
+    Books = new List<Book> { b }  
+};
 
